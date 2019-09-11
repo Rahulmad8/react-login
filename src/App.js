@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Profile from './Components/Profile/Profile';
+import Login from './Components/login/Login';
+import Register from './Components/Register/Register';
+import EditProfile from './Components/Profile/EditProfile';
+import {fire} from './Config/fire';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  state={ 
+    user: {}
+  }
+  componentDidMount(){
+    this.authListner();
+  }
+
+  authListner = () => {
+    fire.auth().onAuthStateChanged( (user) => {
+      console.log(user);
+      if (user) {
+        this.setState({user})
+        
+        
+      } else {
+        this.setState({user: null})
+      }
+    })
+  }
+
+  render() {
+    
+    return (
+     
+      <BrowserRouter>
+        
+        <Route exact path="/" component={Profile}  />
+        <Route exact path="/login" render={() => <Login auth={this.state.user} /> }/>
+        <Route path="/register" component = {Register} />
+        <Route path="/editprofile" component = {EditProfile} />
+       
+      </BrowserRouter>
+    )
+  }
 }
 
-export default App;
