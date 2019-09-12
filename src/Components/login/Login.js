@@ -54,7 +54,7 @@ export default class Login extends Component {
                                             
                                             
                                             <Link onClick={this.login}  className="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-4" 
-                                            to="/">Login</Link>
+                                            to="/profile">Login</Link>
 
                                             <Link className="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-4"
                                             to='/register'>Register</Link>

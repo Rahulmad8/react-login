@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {fire} from '../../Config/fire';
-import {DB} from '../../Config/fire'
+import {DB} from '../../Config/fire';
+import { Redirect, Link } from "react-router-dom";  
 
 
 export class Register extends Component {
@@ -73,7 +74,7 @@ export class Register extends Component {
                                             </div>
 
                                             <div className="form-label-group mb-2x">
-                                            <input type="confirm" name='confirm' id="confirm" className="form-control" placeholder="Confirm Password" required/>
+                                            <input type="password" name='confirm' id="confirm" className="form-control" placeholder="Confirm Password" required/>
                                             <label for="confirm">Confirm Password</label>
                                             </div>
 
@@ -83,23 +84,21 @@ export class Register extends Component {
                                             </div>
 
                                             <div className="form-label-group mb-2x">
-                                            <input type="number" name='mobile' id="mobile" value={this.state.mobile} onchange={this.handleChange} className="form-control" placeholder="Mobile Number" required/>
+                                            <input type="text" value={this.state.mobile} onChange={this.handleChange} name='mobile' id="mobile" className="form-control" placeholder="Mobile Number" required/>
                                             <label for="mobile">Mobile Number</label>
                                             </div>
 
                                             <div className="form-label-group mb-2x">
-                                            <input type="text" name='address' id="address" value={this.state.address} onchange={this.handleChange} className="form-control" placeholder="Address" required/>
+                                            <input type="text" value={this.state.address} onChange={this.handleChange} name='address' id="address" className="form-control" placeholder="Address" required/>
                                             <label for="address">Address</label>
                                             </div>
 
                                             <div className="form-label-group mb-2x">
-                                            <input type="number" name='zip' id="zip" value={this.state.zip} onchange={this.handleChange} className="form-control" placeholder="Zip Code"  required/>
+                                            <input type="text" value={this.state.zip} onChange={this.handleChange} name='zip' id="zip" className="form-control" placeholder="Zip Code" required/>
                                             <label for="zip">Zip Code</label>
                                             </div>
-                                            
-                                            {/* <button className="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-4" type="submit">Login</button> */}
 
-                                            <button onClick={this.signUp} className="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mt-4" type="submit">Register</button>
+                                            <button onClick={this.signUp} className="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mt-4" type="submit"> Register</button>
                                         </form>
                                     </div>
                                 </div>

@@ -33,8 +33,8 @@ export default class App extends Component {
      
       <BrowserRouter>
         
-        <Route exact path="/" component={Profile}  />
-        <Route exact path="/login" render={() => <Login auth={this.state.user} /> }/>
+        <Route exact path="/" render={() => <Login auth={this.state.user} /> }/>
+        <Route exact path="/profile" component={Profile}  />
         <Route path="/register" component = {Register} />
         <Route path="/editprofile" component = {EditProfile} />
        

@@ -13,7 +13,7 @@ export class Profile extends Component {
             <div>
                 <nav className="navbar navbar-light bg-light">
                     <span className="navbar-brand mb-0 h1">Profile</span>
-                    <span className="navbar-brand mb-0 h1"><Link className="btn btn-outline-dark" onClick={this.logOut} to='/login'>Logout</Link></span>
+                    <span className="navbar-brand mb-0 h1"><Link className="btn btn-outline-dark" onClick={this.logOut} to='/'>Logout</Link></span>
                 </nav>
                 <div className="card">
                     
